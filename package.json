@@ -1,0 +1,27 @@
+{
+  "name": "gamespoint",
+  "version": "1.0.0",
+  "description": "Proyecto de curso Desarrollo de Entornos Web impartido por el instituto Cibertec",
+  "main": "index.js",
+  "scripts": {
+    "postcss": "postcss src/css/home.pcss -o dist/css/home.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedavos/JustNormalGames.git"
+  },
+  "keywords": [],
+  "author": "davidvs <davidvargas.d45@gmail.com> (git@github.com:Davidvd45/platzim.git)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedavos/JustNormalGames/issues"
+  },
+  "homepage": "https://github.com/thedavos/JustNormalGames#readme",
+  "devDependencies": {
+    "postcss-cli": "5.0.0",
+    "postcss-preset-env": "6.1.1"
+  },
+  "dependencies": {
+    "postcss-import": "12.0.0"
+  }
+}
