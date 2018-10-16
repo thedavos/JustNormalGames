@@ -447,10 +447,17 @@ input, textarea {
                 box-sizing: content-box;
                 line-height: 8px;
                 color: #244F58;
-                color: var(--icon-foot)
+                color: var(--icon-foot);
+                transition: .3s
             }
 .footer .footer-wrap .footer-redes .footer-redes-item:first-child {
                     margin-left: 0;
+                }
+.footer .footer-wrap .footer-redes .footer-redes-item:hover {
+                    background: #244F58;
+                    background: var(--icon-foot);
+                    color: #eaeaea;
+                    color: var(--icon-bg);
                 }
 .footer .footer-wrap .footer-copy {
             margin-top: 3em;
