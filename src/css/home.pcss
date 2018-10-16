@@ -1,44 +1,23 @@
+/* VARIABLES Y RESET */
 @import './index.pcss';
-@import './util.pcss';
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    background: var(--nav-color);
-    font-size: 16px;
-    & .navbar-wrap {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    & .navbar-list {
-        display: flex;
-    }
+/* REUTILIZABLES */
+@import './utilities.pcss';
 
-    & .navbar-item {
-        margin-left: 2.5em;
-        position: relative;
-        &:first-child {
-            margin-left: 0;
-        }
-        &::before {
-            content: "";
-            display: none;
-            width: 10px;
-            height: 10px;
-            background: red;
-            position: absolute;
-            left: -1.1em;
-            top: 50%;
-            margin-top: -6px;
-            border-radius: 50%;
-        }
-        &:hover {
-                display: block;
-            }
-    }
+/* BARRA DE NAVEGACIÓN */
+@import './components/navbar.pcss';
 
-    & .navbar-link {
-        color: var(--white);
-    }
-}
+/* HEADER */
+@import './components/header.pcss';
+
+/* PRINCIPAL CONTENT */
+@import './components/home-hero.pcss';
+
+/* ULTIMAS NOTICIAS */
+@import './components/news.pcss';
+
+/* SUSCRIPCION */
+@import './components/newsletter.pcss';
+
+/* FOOTER */
+@import './components/footer.pcss';

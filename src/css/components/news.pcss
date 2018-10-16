@@ -1,0 +1,97 @@
+.news {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    background: var(--primary-bg);
+
+    & .container {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    & .news-title {
+        display: flex;
+        align-items: center;
+
+        & h2 {
+            font-size: 1.25em;
+            color: var(--secondary-bg);
+            font-weight: var(--semibold-weight);
+            text-transform: uppercase;
+            margin-left: .8em;
+        }
+    }
+
+    & .news-icon {
+        font-size: 2em;
+        color: var(--icon-color);
+    }
+
+    & .news-row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3em;
+
+        & .news-card {
+            width: 220px;
+            border-radius: 8px;
+            background: var(--white);
+
+            & .news-card-image {
+                width: 220px;
+                height: 200px;
+                & img {
+                    width: inherit;
+                    height: inherit;
+                    vertical-align: top;
+                    object-fit: cover;
+                    border-radius: 8px 8px 0 0;
+                }
+            }
+
+            & .news-card-body {
+                border-radius: 0 0 8px 8px;
+                padding: .85em 1em;
+                height: calc(100% - 200px);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                & .news-card-title {
+                    font-size: 1em;
+                    font-weight: var(--medium-weight);
+                    color: var(--card-text);
+                    line-height: 1.65em;
+                }
+
+                & .news-card-more {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    margin-top: 1.5em;
+                    font-size: .75em;
+
+                    & span {
+                        font-weight: var(--regular-weight);
+                        color: var(--title-color);
+                    }
+
+                    & .--outline {
+                        font-weight: var(--semibold-weight);
+                        border: 1px solid var(--btn-outline);
+                        border-radius: 4px;
+                        padding: .8em 1.5em;
+                        background: var(--white);
+                        color: var(--btn-outline);
+                        transition: .4s;
+                        &:hover {
+                            box-shadow: none;
+                            background: var(--btn-outline);
+                            color: var(--white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

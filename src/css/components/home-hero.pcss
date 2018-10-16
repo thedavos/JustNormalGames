@@ -1,0 +1,61 @@
+.hero {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    background: var(--secondary-bg);
+    
+    & .container {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    & .hero-title {
+        display: flex;
+        align-items: center;
+
+        & h2 {
+            font-size: 1.25em;
+            color: var(--title-color);
+            font-weight: var(--semibold-weight);
+            text-transform: uppercase;
+            margin-left: .8em;
+        }
+    }
+
+    & .hero-icon {
+        font-size: 2em;
+        color: var(--icon-color);
+    }
+
+    & .hero-games {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3em;
+
+        & .hero-item {
+            position: relative;
+
+            & img {
+                width: 200px;
+                height: 150px;
+                vertical-align: top;
+                filter: brightness(0.5);
+                transition: filter .3s;
+            }
+            & span {
+                position: absolute;
+                z-index: 2;
+                left: 1em;
+                bottom: 1em;
+                font-size: 1em;
+                font-weight: var(--medium-weight);
+                color: var(--white);
+                text-transform: uppercase;
+            }
+            
+            &:hover img {
+                filter: none;
+            }
+        }
+    }
+}

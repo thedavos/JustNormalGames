@@ -1,0 +1,85 @@
+.footer {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    background: var(--primary-bg);
+    
+    & .container {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    & .footer-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+        & .footer-links {
+            display: flex;
+            align-items: center;
+
+            & a {
+                font-size: .9em;
+                font-weight: var(--regular-weight);
+                color: var(--white);
+                text-transform: uppercase;
+                margin-left: 5em;
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+
+            & .footer-language {
+                margin-left: 5em;
+                & label {
+                    font-size: .9em;
+                    font-weight: var(--regular-weight);
+                    color: var(--white);
+                    text-transform: uppercase;
+                }
+
+                & select {
+                    margin-left: 1.5em;
+                    padding: .5em 5em .5em 1em;
+                    background: transparent;
+                    border: 0;
+                    color: var(--white);
+                    border: 1px solid var(--secondary-bg);
+                    border-right: none;
+                    & option {
+                        font-size: .6em;
+                        font-weight: var(--regular-weight);
+                        color: var(--white);
+                        padding: 5px;
+                    }
+                }
+            }
+        }
+
+        & .footer-redes {
+            display: flex;
+            margin-top: 3em;
+
+            & .footer-redes-item {
+                margin-left: 2.5em;
+                background: var(--icon-bg);
+                border-radius: 50%;
+                padding: 8px;
+                box-sizing: content-box;
+                line-height: 8px;
+                color: var(--icon-foot);
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        & .footer-copy {
+            margin-top: 3em;
+            font-size: .9em;
+            font-weight: var(--regular-weight);
+            color: var(--white);
+        }
+    }
+}
