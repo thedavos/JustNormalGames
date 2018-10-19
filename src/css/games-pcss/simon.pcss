@@ -1,0 +1,106 @@
+/* VARIABLES Y RESET */
+@import '../index.pcss';
+
+/* REUTILIZABLES */
+@import '../utilities.pcss';
+
+/* BARRA DE NAVEGACIÓN */
+@import '../components/navbar.pcss';
+
+/* SIMON DICE */
+
+.gameboard-container {
+    height: calc(100vh - 92px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: var(--light-bg);
+}
+
+.gameboard {
+    height: 100vh;
+    width: 100vh;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    max-height: 60vh;
+    max-width: 60vh;
+}
+
+.color {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: left;
+}
+
+.azul {
+    background: #2257b3;
+}
+
+.azul.light {
+    background: #689fff;
+}
+
+.rojo {
+    background: #b91d1d;
+}
+
+.rojo.light {
+    background: #ff7171;
+}
+
+.naranja {
+    background: #f0932b;
+}
+
+.naranja.light {
+    background: #ffbe76;
+}
+
+.verde {
+    background: #6ab04c;
+}
+
+.verde.light {
+    background: #badc58;
+}
+
+.hide {
+    display: none;
+}
+
+.btn-start {
+    cursor: pointer;
+    width: 420px;
+    height: 100px;
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: none;
+    border-bottom: 4px solid #c4c6c7;
+    border-radius: 8px;
+    font-size: 3em;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 210px);
+    transition: .4s;
+    outline: none;
+}
+
+.btn-start:hover {
+    color: #ecf0f1;
+    background: #2c3e50;
+    border-bottom: 4px solid #1f3346;
+}
+
+.btn-start:active {
+    transform: scale(.95);
+}

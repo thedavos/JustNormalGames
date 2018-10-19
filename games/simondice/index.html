@@ -3,16 +3,34 @@
   <head>
     <meta charset="utf-8">
     <title>Simon Dice</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="./../../assets/icon/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="gameboard">
-      <div id="celeste" class="color celeste left" data-color="celeste"></div>
-      <div id="violeta" class="color violeta right" data-color="violeta"></div>
-      <div id="naranja" class="color naranja left" data-color="naranja"></div>
-      <div id="verde" class="color verde right" data-color="verde"></div>
-      <button id="btnEmpezar" class="btn-start">Empezar a jugar!</button>
-    </div>
+    <section class="simon">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-wrap">
+            <figure class="navbar-logo">
+              <a href="./../../index.html">
+                <img src="./../../assets/logo.png" alt="Logo Gamespoint">
+              </a>
+            </figure>
+          </div>
+        </div>
+      </nav>
+      <div class="gameboard-container">
+        <div class="gameboard">
+          <div id="azul" class="color azul left" data-color="azul"></div>
+          <div id="rojo" class="color rojo right" data-color="rojo"></div>
+          <div id="naranja" class="color naranja left" data-color="naranja"></div>
+          <div id="verde" class="color verde right" data-color="verde"></div>
+          <button id="btnEmpezar" class="btn-start">Empezar a jugar!</button>
+        </div>
+      </div>
+    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
     <script src="index.js"></script>
   </body>

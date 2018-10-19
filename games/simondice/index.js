@@ -1,7 +1,12 @@
-const celeste = document.getElementById('celeste')
-const violeta = document.getElementById('violeta')
+const azul = document.getElementById('azul')
+const rojo = document.getElementById('rojo')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
+const verdeAudio = new Audio('./../../assets/audio/green.mp3')
+const rojoAudio = new Audio('./../../assets/audio/red.mp3')
+const azulAudio = new Audio('./../../assets/audio/blue.mp3')
+const naranjaAudio = new Audio('./../../assets/audio/naranja.mp3')
+const audioPerder = new Audio('./../../assets/audio/lose.mp3')
 const ULTIMO_NIVEL = 10
 const btnEmpezar = document.getElementById('btnEmpezar')
 btnEmpezar.addEventListener('click', empezarJuego)
@@ -20,11 +25,18 @@ class Juego {
         btnEmpezar.classList.toggle('hide')
         this.nivel = 1
         this.colores = {
-            celeste,
-            violeta,
+            azul,
+            rojo,
             naranja,
             verde
-        }
+        },
+        this.audio = {
+            azul: azulAudio,
+            rojo: rojoAudio,
+            naranja: naranjaAudio,
+            verde: verdeAudio
+        },
+        this.derrota = audioPerder
     }
 
     generarSecuencia() {
@@ -40,9 +52,9 @@ class Juego {
     transformarNumeroAColor(num) {
         switch (num) {
             case 0:
-                return 'celeste'
+                return 'azul'
             case 1:
-                return 'violeta'
+                return 'rojo'
             case 2:
                 return 'naranja'
             default:
@@ -52,9 +64,9 @@ class Juego {
 
     transfomarColorANumero(color) {
         switch (color) {
-            case 'celeste':
+            case 'azul':
                 return 0
-            case 'violeta':
+            case 'rojo':
                 return 1
             case 'naranja':
                 return 2
@@ -72,6 +84,7 @@ class Juego {
 
     iluminarColor(color) {
         this.colores[color].classList.add('light')
+        this.audio[color].play()
         setTimeout(() => this.apagarColor(color), 500)
     }
 
@@ -112,12 +125,13 @@ class Juego {
     }
 
     ganoElJuego() {
-        swal('Platzi','Felicitaciones, Ganaste!', 'success')
+        swal('Gamespoint','Felicitaciones, Ganaste!', 'success')
             .then(this.inicializar)
     }
 
     perdioElJuego() {
-        swal('Platzi', 'Lo lamentamos, Perdiste :(', 'error')
+        this.derrota.play()
+        swal('Gamespoint', 'Lo lamentamos, Perdiste :(', 'error')
             .then(() => {
                 this.eliminarEventosClick()
                 this.inicializar()
