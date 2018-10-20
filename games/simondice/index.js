@@ -1,18 +1,30 @@
-const azul = document.getElementById('azul')
-const rojo = document.getElementById('rojo')
-const naranja = document.getElementById('naranja')
-const verde = document.getElementById('verde')
-const verdeAudio = new Audio('./../../assets/audio/green.mp3')
-const rojoAudio = new Audio('./../../assets/audio/red.mp3')
-const azulAudio = new Audio('./../../assets/audio/blue.mp3')
-const naranjaAudio = new Audio('./../../assets/audio/naranja.mp3')
-const audioPerder = new Audio('./../../assets/audio/lose.mp3')
-const ULTIMO_NIVEL = 10
+let listaPuntajes = []
+let ULTIMO_NIVEL
 const btnEmpezar = document.getElementById('btnEmpezar')
 btnEmpezar.addEventListener('click', empezarJuego)
 
+function mensajeInicial(texto = 'Elige un nivel') {
+    return swal({
+        text: texto,
+        content: 'input',
+        button: {
+            text: "Go!",
+        },
+        closeOnClickOutside: false,
+        closeOnEsc: false
+    }).then(nivel => {
+        if (Number(nivel)) {
+            ULTIMO_NIVEL = Number(nivel)
+        } else {
+            mensajeInicial('Coloque el nivel adecuadamente')
+        }
+    })
+}
+
+mensajeInicial()
 class Juego {
     constructor() {
+        this.iniciarTiempo()
         this.inicializar()
         this.generarSecuencia()
         setTimeout(this.siguienteNivel, 500)
@@ -25,18 +37,19 @@ class Juego {
         btnEmpezar.classList.toggle('hide')
         this.nivel = 1
         this.colores = {
-            azul,
-            rojo,
-            naranja,
-            verde
+            azul: document.getElementById('azul'),
+            rojo: document.getElementById('rojo'),
+            naranja: document.getElementById('naranja'),
+            verde: document.getElementById('verde')
         },
         this.audio = {
-            azul: azulAudio,
-            rojo: rojoAudio,
-            naranja: naranjaAudio,
-            verde: verdeAudio
+            azul: new Audio('./../../assets/audio/blue.mp3'),
+            rojo: new Audio('./../../assets/audio/red.mp3'),
+            naranja: new Audio('./../../assets/audio/naranja.mp3'),
+            verde: new Audio('./../../assets/audio/green.mp3')
         },
-        this.derrota = audioPerder
+        this.derrota = new Audio('./../../assets/audio/lose.mp3'),
+        this.intervalTimer
     }
 
     generarSecuencia() {
@@ -93,7 +106,7 @@ class Juego {
     }
 
     agregarEventosClick() {
-        for(let color in this.colores) {
+        for (let color in this.colores) {
             this.colores[color].addEventListener('click', this.elegirColor)
         }
     }
@@ -114,24 +127,60 @@ class Juego {
                 this.nivel++
                 this.eliminarEventosClick()
                 if (this.nivel === (ULTIMO_NIVEL + 1)) {
+                    clearInterval(this.intervalTimer)
                     this.ganoElJuego()
+                    this.agregarItemPuntaje()
                 } else {
-                    setTimeout(this.siguienteNivel, 1500)
+                    setTimeout(() => {
+                        swal("Gamespoint - Simon Dice", `Nivel ${this.nivel - 1} completado`, {
+                            buttons: false,
+                            timer: 1000,
+                        })
+                    }, 500)
+                    setTimeout(this.siguienteNivel, 2000)
                 }
             }
         } else {
             this.perdioElJuego()
+            this.agregarItemPuntaje()
         }
     }
 
+    agregarItemPuntaje() {
+        const list = document.getElementById('timeList')
+        const tiempoTranscurrido = document.getElementById('timedate').textContent
+        listaPuntajes.push(tiempoTranscurrido)
+        console.log(listaPuntajes.sort((a, b) => b - a))
+        list.innerHTML = ""
+        for (let i = 0; i < listaPuntajes.length; i++) {
+            const li = document.createElement('li')
+            li.setAttribute('class', 'lista-puntaje-item')
+            li.appendChild(document.createTextNode(`Puntaje ${i + 1} : ${listaPuntajes[i]}`))
+            list.appendChild(li)
+        }
+    }
+
+    actualizarPuntaje(initTime) {
+        const now = new Date();
+        const milli = now.getTime() - initTime;
+        document.getElementById('timedate').innerHTML = milli;
+    }
+
+    iniciarTiempo() {
+        const initTime = new Date().getTime();
+        this.actualizarPuntaje(initTime);
+        this.intervalTimer = setInterval(this.actualizarPuntaje, 100, initTime);
+    }
+
     ganoElJuego() {
-        swal('Gamespoint','Felicitaciones, Ganaste!', 'success')
+        swal('Gamespoint - Simon Dice','Felicitaciones, Ganaste!', 'success')
             .then(this.inicializar)
     }
 
     perdioElJuego() {
+        clearInterval(this.intervalTimer)
         this.derrota.play()
-        swal('Gamespoint', 'Lo lamentamos, Perdiste :(', 'error')
+        swal('Gamespoint - Simon Dice', 'Lo lamentamos, Perdiste :(', 'error')
             .then(() => {
                 this.eliminarEventosClick()
                 this.inicializar()

@@ -425,8 +425,7 @@ input, textarea {
                     color: #fff;
                     color: var(--white);
                     border: 1px solid #eaeaea;
-                    border: 1px solid var(--secondary-bg);
-                    border-right: none
+                    border: 1px solid var(--secondary-bg)
                 }
 .footer .footer-wrap .footer-links .footer-language select option {
                         font-size: .6em;

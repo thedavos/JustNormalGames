@@ -4,7 +4,8 @@
   "description": "Proyecto de curso Desarrollo de Entornos Web impartido por el instituto Cibertec",
   "main": "index.js",
   "scripts": {
-    "postcss": "postcss src/css/home.pcss -o dist/css/home.css -w"
+    "home": "postcss src/css/home.pcss -o dist/css/home.css -w",
+    "simon-dice": "postcss ./src/css/games-pcss/simon.pcss -o ./games/simondice/style.css -w"
   },
   "repository": {
     "type": "git",
