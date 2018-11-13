@@ -150,7 +150,6 @@ class Juego {
         const list = document.getElementById('timeList')
         const tiempoTranscurrido = document.getElementById('timedate').textContent
         listaPuntajes.push(tiempoTranscurrido)
-        console.log(listaPuntajes.sort((a, b) => b - a))
         list.innerHTML = ""
         for (let i = 0; i < listaPuntajes.length; i++) {
             const li = document.createElement('li')

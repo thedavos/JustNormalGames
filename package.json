@@ -9,10 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thedavos/JustNormalGames.git"
+    "url": "git+https://github.com/thedavos/Gamespoint.git"
   },
   "keywords": [],
-  "author": "davidvs <davidvargas.d45@gmail.com> (git@github.com:Davidvd45/platzim.git)",
+  "author": "davidvs <davidvargas.d45@gmail.com> (git@github.com:Davidvd45/Gamespoint.git)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/thedavos/JustNormalGames/issues"
