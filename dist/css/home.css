@@ -170,6 +170,7 @@ input, textarea {
            object-fit: cover;
         margin-bottom: 2em;
         border-radius: 4px;
+        cursor: pointer;
     }
 .header .btn {
         background: linear-gradient(to right, #61BACE 0%, #336E7B 100%);

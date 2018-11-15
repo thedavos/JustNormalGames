@@ -27,13 +27,13 @@
                         </figure>
                         <ul class="navbar-list">
                             <li class="navbar-item">
-                                <a href="" class="navbar-link">Games</a>
+                                <a data-i18n="nav.games" href="" class="navbar-link">Games</a>
                             </li>
                             <li class="navbar-item">
-                                <a href="" class="navbar-link">Suscription</a>
+                                <a data-i18n="nav.subscription" href="" class="navbar-link">Subscription</a>
                             </li>
                             <li class="navbar-item">
-                                <a href="" class="navbar-link">News</a>
+                                <a data-i18n="nav.news" href="" class="navbar-link">News</a>
                             </li>
                         </ul>
                     </div>
@@ -45,7 +45,7 @@
                 <div class="container">
                     <div class="header-wrap">
                         <img class="header-image" src="./assets/games/tetris.jpg" alt="Games">
-                        <button id="main-btn" class="btn">Play Game</button>
+                        <button data-i18n="titles.play" id="main-btn" class="btn">Play Game</button>
                     </div>
                 </div>
             </header>
@@ -53,12 +53,12 @@
             <!-- ZONA DE JUEGOS -->
             <main class="hero">
                 <div class="container">
-                    <div class="hero-wrap">
+                    <div class="hero-wrap scrollflow -slide-left -opacity">
                         <div class="hero-title">
                             <div class="hero-icon">
                                 <i class="fas fa-gamepad"></i>
                             </div>
-                            <h2>Javascript Games</h2>
+                            <h2 data-i18n="titles.games">Javascript Games</h2>
                         </div>
                         <div class="hero-games">
                             <a href="" class="hero-item">
@@ -85,12 +85,12 @@
             <!-- ULTIMAS NOTICIAS -->
             <section class="news">
                 <div class="container">
-                    <div class="news-wrap">
+                    <div class="news-wrap scrollflow -slide-left -opacity">
                         <div class="news-title">
                             <div class="news-icon">
                                 <i class="far fa-newspaper"></i>
                             </div>
-                            <h2>Last News</h2>
+                            <h2 data-i18n="titles.news">Last News</h2>
                         </div>
                         <div class="news-row">
                             <article class="news-card">
@@ -101,7 +101,7 @@
                                     <h3 class="news-card-title">Daeja's View: Not all Fun and Games</h3>
                                     <div class="news-card-more">
                                         <span>DOTA2</span>
-                                        <button class="btn --outline">See more</button>
+                                        <button data-i18n="news.more" class="btn --outline">See more</button>
                                     </div>
                                 </div>
                             </article>
@@ -113,7 +113,7 @@
                                     <h3 class="news-card-title">Alliance will be at ESL One Hamburg 2018</h3>
                                     <div class="news-card-more">
                                         <span>DOTA2</span>
-                                        <button class="btn --outline">See more</button>
+                                        <button data-i18n="news.more" class="btn --outline">See more</button>
                                     </div>
                                 </div>
                             </article>
@@ -125,7 +125,7 @@
                                     <h3 class="news-card-title">Zechs Files: Who Won Transfer Season?</h3>
                                     <div class="news-card-more">
                                         <span>CS:GO</span>
-                                        <button class="btn --outline">See more</button>
+                                        <button data-i18n="news.more" class="btn --outline">See more</button>
                                     </div>
                                 </div>
                             </article>
@@ -137,7 +137,7 @@
                                     <h3 class="news-card-title">The New 'League Of Legends' Video 'Rise' Is Entirely Amazing</h3>
                                     <div class="news-card-more">
                                         <span>LOL</span>
-                                        <button class="btn --outline">See more</button>
+                                        <button data-i18n="news.more" class="btn --outline">See more</button>
                                     </div>
                                 </div>
                             </article>
@@ -149,9 +149,9 @@
             <!-- SUSCRIBITE! NEWSLETTER -->
             <section class="newsletter">
                 <div class="container">
-                    <form class="newsletter-form">
-                        <input type="text" placeholder="Leave your e-mail here if you want to know the last games and news!">
-                        <input type="submit" value="SUSCRIBE" class="btn --large">
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input id="email" type="text" placeholder="Leave your e-mail here if you want to know the last games and news!">
+                        <input id="btnSuscription" type="submit" value="SUSCRIBE" class="btn --large">
                     </form>
                 </div>
             </section>
@@ -161,15 +161,15 @@
                 <div class="container">
                     <div class="footer-wrap">
                         <div class="footer-links">
-                            <a href="">Contact</a>
-                            <a href="">Source Code</a>
-                            <a href="">Team</a>
-                            <a href="">SiteMap</a>
+                            <a href="" data-i18n="footerLinks.contact">Contact</a>
+                            <a href="" data-i18n="footerLinks.source">Source Code</a>
+                            <a href="" data-i18n="footerLinks.team">Team</a>
+                            <a href="" data-i18n="footerLinks.sitemap">SiteMap</a>
                             <div class="footer-language">
                                 <label for="">Language</label>
-                                <select>
-                                    <option>English</option>
-                                    <option>Spanish</option>
+                                <select id="selectLanguage">
+                                    <option data-i18n="option.en" value="en-US">English</option>
+                                    <option data-i18n="option.es" value="es-ES">Spanish</option>
                                 </select>
                             </div>
                         </div>
@@ -185,7 +185,7 @@
                             </a>
                         </div>
                         <div class="footer-copy">
-                            <span>© Copyright Cibertec Developers Team 2018</span>
+                            <span data-i18n="copy.msg">© Copyright Cibertec Developers Team 2018</span>
                         </div>
                     </div>
                 </div>
@@ -193,6 +193,12 @@
 
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+        <script src="./src/js/libs/eskju.query.scrollflow.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/0.0.14/i18next-jquery.min.js"></script>
+        <script src="https://unpkg.com/i18next/i18next.min.js"></script>
+        <script src="./src/js/translation.js"></script>
         <script src="./index.js"></script>
     </body>
 </html>
