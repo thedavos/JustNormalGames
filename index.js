@@ -38,7 +38,7 @@ $(() => {
                 clearInterval(intervalo)
                 status = false
             } else {
-                rotateBanner()
+                carouselEngine()
                 status = true
             }
         })
