@@ -167,7 +167,7 @@ h1 {
 				position: relative;
 			}
 			#canvas {
-				background-image: url('../material/fondo.jpg');
+				background-image: url('./../../assets/games/fondo.jpg');
 				border: 1px solid;
 			}
 			#base {
