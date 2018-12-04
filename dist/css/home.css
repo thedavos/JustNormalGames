@@ -178,8 +178,7 @@ input, textarea {
     }
 .siema-wrapper {
     width: 100%;
-    max-width: 700px;
-    max-width: var(--banner-width);
+    max-width: 650px;
     margin: 0 auto;
 }
 .siema-wrapper img {
