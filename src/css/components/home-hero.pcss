@@ -7,6 +7,7 @@
     & .container {
         padding-top: 0;
         padding-bottom: 0;
+        margin: 5em auto;
     }
 
     & .hero-title {
@@ -30,13 +31,15 @@
     & .hero-games {
         display: flex;
         justify-content: space-between;
-        margin-top: 3em;
+        flex-wrap: wrap;
+        margin-top: 1em;
 
         & .hero-item {
             position: relative;
+            margin-top: 1.2em;
 
             & img {
-                width: 200px;
+                width: 250px;
                 height: 150px;
                 vertical-align: top;
                 filter: brightness(0.5);

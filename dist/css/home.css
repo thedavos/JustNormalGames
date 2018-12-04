@@ -205,6 +205,7 @@ input, textarea {
 .hero .container {
         padding-top: 0;
         padding-bottom: 0;
+        margin: 5em auto;
     }
 .hero .hero-title {
         display: flex;
@@ -227,13 +228,15 @@ input, textarea {
 .hero .hero-games {
         display: flex;
         justify-content: space-between;
-        margin-top: 3em
+        flex-wrap: wrap;
+        margin-top: 1em
     }
 .hero .hero-games .hero-item {
-            position: relative
+            position: relative;
+            margin-top: 1.2em
         }
 .hero .hero-games .hero-item img {
-                width: 200px;
+                width: 250px;
                 height: 150px;
                 vertical-align: top;
                 -webkit-filter: brightness(0.5);
