@@ -12,6 +12,7 @@
             crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
         <link rel="stylesheet" href="./dist/css/home.css">
     </head>
     <body>
@@ -27,13 +28,13 @@
                         </figure>
                         <ul class="navbar-list">
                             <li class="navbar-item">
-                                <a data-i18n="nav.games" href="" class="navbar-link">Games</a>
+                                <a data-i18n="nav.games" data-scroll href="#games" class="navbar-link">Games</a>
                             </li>
                             <li class="navbar-item">
-                                <a data-i18n="nav.subscription" href="" class="navbar-link">Subscription</a>
+                                <a data-i18n="nav.news" data-scroll href="#news" class="navbar-link">News</a>
                             </li>
                             <li class="navbar-item">
-                                <a data-i18n="nav.news" href="" class="navbar-link">News</a>
+                                <a data-i18n="nav.subscription" data-scroll href="#sub" class="navbar-link">Subscription</a>
                             </li>
                         </ul>
                     </div>
@@ -44,14 +45,19 @@
             <header class="header">
                 <div class="container">
                     <div class="header-wrap">
-                        <img class="header-image" src="./assets/games/tetris.jpg" alt="Games">
+                        <div id="header-images">
+                            <div class="siema-wrapper">
+                                <div class="siema">
+                                </div>
+                            </div>
+                        </div>
                         <button data-i18n="titles.play" id="main-btn" class="btn">Play Game</button>
                     </div>
                 </div>
             </header>
 
             <!-- ZONA DE JUEGOS -->
-            <main class="hero">
+            <main id="games" class="hero">
                 <div class="container">
                     <div class="hero-wrap scrollflow -slide-left -opacity">
                         <div class="hero-title">
@@ -61,19 +67,19 @@
                             <h2 data-i18n="titles.games">Javascript Games</h2>
                         </div>
                         <div class="hero-games">
-                            <a href="" class="hero-item">
+                            <a href="./games/tic-tac-toe/" class="hero-item" target="_blank">
                                 <img src="./assets/games/tic-tac-toe.png" alt="Game">
                                 <span class="hero-item-title">Tic - Tac - Toe</span>
                             </a>
-                            <a href="" class="hero-item">
+                            <a href="" class="hero-item" target="_blank">
                                 <img src="./assets/games/memory.png" alt="Game">
                                 <span class="hero-item-title">Memory Game</span>
                             </a>
-                            <a href="" class="hero-item">
-                                <img src="./assets/games/Snake.png" alt="Game">
-                                <span class="hero-item-title">Snake Game</span>
+                            <a href="./games/yankenpo/" class="hero-item" target="_blank">
+                                <img src="./assets/games/rps.PNG" alt="Game">
+                                <span class="hero-item-title">Piedra, Papel y Tijera</span>
                             </a>
-                            <a href="./games/simondice/index.html" class="hero-item">
+                            <a href="./games/simondice/index.html" class="hero-item" target="_blank">
                                 <img src="./assets/games/simondice.png" alt="Game">
                                 <span class="hero-item-title">Simón Dice</span>
                             </a>
@@ -83,7 +89,7 @@
             </main>
 
             <!-- ULTIMAS NOTICIAS -->
-            <section class="news">
+            <section id="news" class="news">
                 <div class="container">
                     <div class="news-wrap scrollflow -slide-left -opacity">
                         <div class="news-title">
@@ -95,26 +101,14 @@
                         <div class="news-row">
                             <article class="news-card">
                                 <figure class="news-card-image">
-                                    <img src="./assets/news/csgo-1.jpg" alt="news">
-                                </figure>
-                                <div class="news-card-body">
-                                    <h3 class="news-card-title">Daeja's View: Not all Fun and Games</h3>
-                                    <div class="news-card-more">
-                                        <span>DOTA2</span>
-                                        <button data-i18n="news.more" class="btn --outline">See more</button>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="news-card">
-                                <figure class="news-card-image">
                                     <img src="./assets/news/dota-news-1.jpeg" alt="news">
                                 </figure>
                                 <div class="news-card-body">
-                                    <h3 class="news-card-title">Alliance will be at ESL One Hamburg 2018</h3>
-                                    <div class="news-card-more">
+                                    <h3 class="news-card-title" data-i18n="news.first">Daeja's View: Not all Fun and Games</h3>
+                                    <a target="_blank" href="https://www.gosugamers.net/dota2/features/47936-daeja-s-view-not-all-fun-and-games" class="news-card-more">
                                         <span>DOTA2</span>
                                         <button data-i18n="news.more" class="btn --outline">See more</button>
-                                    </div>
+                                    </a>
                                 </div>
                             </article>
                             <article class="news-card">
@@ -122,11 +116,23 @@
                                     <img src="./assets/news/dota-news-2.jpeg" alt="news">
                                 </figure>
                                 <div class="news-card-body">
-                                    <h3 class="news-card-title">Zechs Files: Who Won Transfer Season?</h3>
-                                    <div class="news-card-more">
+                                    <h3 class="news-card-title" data-i18n="news.second">Alliance will be at ESL One Hamburg 2018</h3>
+                                    <a target="_blank" href="https://www.gosugamers.net/dota2/news/47965-alliance-will-be-at-esl-one-hamburg-2018" class="news-card-more">
+                                        <span>DOTA2</span>
+                                        <button data-i18n="news.more" class="btn --outline">See more</button>
+                                    </a>
+                                </div>
+                            </article>
+                            <article class="news-card">
+                                <figure class="news-card-image">
+                                    <img src="./assets/news/csgo-1.jpg" alt="news">
+                                </figure>
+                                <div class="news-card-body">
+                                    <h3 class="news-card-title" data-i18n="news.third">Zechs Files: Who Won Transfer Season?</h3>
+                                    <a target="_blank" href="https://www.gosugamers.net/counterstrike/features/47012-zechs-files-who-won-transfer-season" class="news-card-more">
                                         <span>CS:GO</span>
                                         <button data-i18n="news.more" class="btn --outline">See more</button>
-                                    </div>
+                                    </a>
                                 </div>
                             </article>
                             <article class="news-card">
@@ -134,11 +140,11 @@
                                     <img src="./assets/news/lol-news.jpg" alt="news">
                                 </figure>
                                 <div class="news-card-body">
-                                    <h3 class="news-card-title">The New 'League Of Legends' Video 'Rise' Is Entirely Amazing</h3>
-                                    <div class="news-card-more">
+                                    <h3 class="news-card-title" data-i18n="news.fourth">The New 'League Of Legends' Video 'Rise' Is Entirely Amazing</h3>
+                                    <a target="_blank" href="https://www.forbes.com/sites/olliebarder/2018/09/29/the-new-league-of-legends-video-rise-is-entirely-amazing/#71b7c7206ee6" class="news-card-more">
                                         <span>LOL</span>
                                         <button data-i18n="news.more" class="btn --outline">See more</button>
-                                    </div>
+                                    </a>
                                 </div>
                             </article>
                         </div>
@@ -147,7 +153,7 @@
             </section>
 
             <!-- SUSCRIBITE! NEWSLETTER -->
-            <section class="newsletter">
+            <section id="sub" class="newsletter">
                 <div class="container">
                     <form id="newsletter-form" class="newsletter-form">
                         <input id="email" type="text" placeholder="Leave your e-mail here if you want to know the last games and news!">
@@ -161,12 +167,12 @@
                 <div class="container">
                     <div class="footer-wrap">
                         <div class="footer-links">
-                            <a href="" data-i18n="footerLinks.contact">Contact</a>
-                            <a href="" data-i18n="footerLinks.source">Source Code</a>
-                            <a href="" data-i18n="footerLinks.team">Team</a>
-                            <a href="" data-i18n="footerLinks.sitemap">SiteMap</a>
+                            <a href="./contact/" data-i18n="footerLinks.contact">Contact</a>
+                            <a href="https://github.com/thedavos/Gamespoint" data-i18n="footerLinks.source">Source Code</a>
+                            <a href="./team/" data-i18n="footerLinks.team">Team</a>
+                            <a href="./sitemap/" data-i18n="footerLinks.sitemap">SiteMap</a>
                             <div class="footer-language">
-                                <label for="">Language</label>
+                                <label data-i18n="language.lang" for="">Language</label>
                                 <select id="selectLanguage">
                                     <option data-i18n="option.en" value="en-US">English</option>
                                     <option data-i18n="option.es" value="es-ES">Spanish</option>
@@ -174,13 +180,13 @@
                             </div>
                         </div>
                         <div class="footer-redes">
-                            <a href="" class="footer-redes-item">
+                            <a href="https://twitter.com" class="footer-redes-item">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="" class="footer-redes-item">
+                            <a href="https://www.instagram.com/" class="footer-redes-item">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="" class="footer-redes-item">
+                            <a href="https://www.twitch.tv/" class="footer-redes-item">
                                 <i class="fab fa-twitch"></i>
                             </a>
                         </div>
@@ -195,6 +201,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
         <script src="./src/js/libs/eskju.query.scrollflow.min.js"></script>
+        <script src="./src/js/libs/siema.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/15.1.0/smooth-scroll.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/0.0.14/i18next-jquery.min.js"></script>
         <script src="https://unpkg.com/i18next/i18next.min.js"></script>

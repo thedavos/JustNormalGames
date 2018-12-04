@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>        
+		<meta charset="ISO-8859-1"> 
+		<title>Gamespoint | Juego 3EN/O/X</title>
+		<link rel="icon" type="image/png" sizes="16x16" href="./../../assets/icon/favicon.png">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+		<link rel="stylesheet" type="text/css" href="ds.css">
+		<script src="funcion.js"></script>
+	
+		
+	
+		
+	
+	</head>    
+	<body>
+		<section class="tic-tac-toe">
+			<nav class="navbar">
+				<div class="container">
+					<div class="navbar-wrap">
+						<figure class="navbar-logo">
+							<a href="./../../index.html">
+								<img src="./../../assets/logo.png" alt="Logo Gamespoint">
+							</a>
+						</figure>
+						<h1>Tic Tac Toe</h1>
+					</div>
+				</div>
+			</nav>
+			<!-- Tablero -->
+			<div class="gameboard-container">
+				<div class="gameboard">
+					<div id="div_contenedor">
+						<input type="text" class="cuadrito" value="" id="1" readonly onclick="marcar(this.id)">
+						<input type="text" class="cuadrito" value="" id="2" readonly onclick="marcar(this.id)">
+						<input type="text" class="cuadrito" value="" id="3" readonly onclick="marcar(this.id)">
+						<input type="text" class="cuadrito" value="" id="4" readonly onclick="marcar(this.id)">
+						<input type="text" class="cuadrito" value="" id="5" readonly onclick="marcar(this.id)">
+						<input type="text" class="cuadrito" value="" id="6" readonly onclick="marcar(this.id)">
+						<input type="text" class="cuadrito" value="" id="7" readonly onclick="marcar(this.id)">
+						<input type="text" class="cuadrito" value="" id="8" readonly onclick="marcar(this.id)">
+						<input type="text" class="cuadrito" value="" id="9" readonly onclick="marcar(this.id)">
+						<br><br><br><br><br><br><br><br>
+						<div id="div_turno">Turno del jugador: X</div>
+						<button onmouseover="FN()" onclick="reiniciar()">Reiniciar Juego</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+	</body>
+</html>

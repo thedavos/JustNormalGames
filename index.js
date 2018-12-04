@@ -1,50 +1,38 @@
 $(() => {
-
-    function rotateBanner() {
-        let count = 0
-        let index = 0
-        const gamesImages = Array.from($('.hero-item').children('img'))
-        const gamesItems = Array.from($('.hero-games').children())
-
-        function carouselEngine() {
-            if (count === 360) {
-                count = 0
-            }
-
-            if (count === 268) {
-
-                if (index > gamesImages.length - 1) {
-                    index = 0
-                }
-
-                $('.header-image').attr('src', `${gamesImages[index].src}`);
-
-                index++
-            }
-
-            count++
-            $('.header-image').css('transform', `rotateX(${count}deg)`)
+    function setAttributes(element, attributes) {
+        for (const attribute in attributes) {
+            element.setAttribute(attribute, attributes[attribute])
         }
+    }
 
-        const intervalo = setInterval(carouselEngine, 10)
+    function addImagesToBanner() {
+        const gamesImages = Array.from($('img[alt=Game]'))
 
-        $('#main-btn').click(function (e) {
-            window.open(gamesItems[index != 4 ? index : 3].href)
-        });
-        
-        let status = true
-        $('.header-image').click(function() {
-            if (status) {
-                clearInterval(intervalo)
-                status = false
-            } else {
-                carouselEngine()
-                status = true
-            }
+        gamesImages.forEach(image => {
+            const gameImage = document.createElement('img')
+            setAttributes(gameImage, {
+                src: image.src,
+                class: 'header-image',
+                alt: 'Games'
+            })
+            $('.siema').append(gameImage);
         })
     }
 
-    rotateBanner()
+    addImagesToBanner();
+
+    const mySiema = new Siema({
+        duration: 1000,
+        loop: true,
+    });
+
+    setInterval(() => mySiema.next(), 2000)
+
+    $('#main-btn').click(function (e) { 
+        const games = Array.from($('.hero-games').children());
+        const randomNumber = Math.floor(Math.random() * games.length);
+        window.open(games[randomNumber].href);
+    });
 
     function isCorrect(input) {
         input.css('border', 'none')
@@ -83,4 +71,8 @@ $(() => {
     }
 
     validateForm()
+
+    const scroll = new SmoothScroll('a[href*="#"]', {
+        easing: 'easeInOutQuad'
+    });
 })

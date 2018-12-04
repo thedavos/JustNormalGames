@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "home": "postcss src/css/home.pcss -o dist/css/home.css -w",
+    "sitemap": "postcss src/css/sitemap.pcss -o dist/css/sitemap.css -w",
+    "team": "postcss src/css/team.pcss -o dist/css/team.css -w",
+    "contact": "postcss src/css/contact.pcss -o dist/css/contact.css -w",
     "simon-dice": "postcss ./src/css/games-pcss/simon.pcss -o ./games/simondice/style.css -w"
   },
   "repository": {

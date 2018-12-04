@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" type="image/png" sizes="16x16" href="./../assets/icon/favicon.png">
+        <title>Gamespoint | SiteMap</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+            crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+        <link rel="stylesheet" href="./../dist/css/sitemap.css">
+    </head>
+    <body>
+        <div class="sitemap">
+            <!-- BARRA DE NAVEGACIÓN -->
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-wrap">
+                        <figure class="navbar-logo">
+                            <a href="./../">
+                                <img src="../assets/logo.png" alt="Logo Gamespoint">
+                            </a>
+                        </figure>
+                        <ul class="navbar-list">
+                            <li class="navbar-item">
+                                <a data-i18n="nav.games" href="./../index.html" class="navbar-link">Games</a>
+                            </li>
+                            <li class="navbar-item">
+                                <a data-i18n="nav.news" href="./../index.html" class="navbar-link">News</a>
+                            </li>
+                            <li class="navbar-item">
+                                <a data-i18n="nav.subscription" href="./../index.html" class="navbar-link">Subscription</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- BANNER PRINCIPAL -->
+            <header class="header">
+                <div class="container">
+                    <h1 data-i18n="title" class="title">Site Map</h1>
+                </div>
+            </header>
+
+            <main class="hero">
+                <div class="container">
+                    <div class="hero-wrap">
+                        <div class="hero-row">
+                            <a data-i18n="hero.home" href="./../" class="btn">Homepage</a>
+                        </div>
+                        <div class="hero-row">
+                            <a href="./../games/simondice/" class="btn">Simón Dice</a>
+                            <a href="./../games/tic-tac-toe/" class="btn">Tic Tac Toe</a>
+                            <a data-i18n="hero.games.rps" href="./../games/yankenpo/" class="btn">Rock, Paper, Scissors</a>
+                            <a href="" class="btn">Game 4</a>
+                            <a href="" class="btn">Game 5</a>
+                        </div>
+                        <div class="hero-row">
+                            <a data-i18n="hero.contact" href="./../contact/" class="btn">Contact</a>
+                            <a data-i18n="hero.team" href="./../team/" class="btn">Team</a>
+                            <a data-i18n="hero.sitemap" href="./" class="btn">Sitemap</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-wrap">
+                        <div class="footer-links">
+                            <a href="./../contact/" data-i18n="footerLinks.contact">Contact</a>
+                            <a href="https://github.com/thedavos/Gamespoint" data-i18n="footerLinks.source">Source Code</a>
+                            <a href="./../team/" data-i18n="footerLinks.team">Team</a>
+                            <a href="./" data-i18n="footerLinks.sitemap">SiteMap</a>
+                            <div class="footer-language">
+                                <label data-i18n="language.lang" for="">Language</label>
+                                <select id="selectLanguage">
+                                    <option data-i18n="option.en" value="en-US">English</option>
+                                    <option data-i18n="option.es" value="es-ES">Spanish</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="footer-redes">
+                            <a href="https://twitter.com" class="footer-redes-item">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" class="footer-redes-item">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.twitch.tv/" class="footer-redes-item">
+                                <i class="fab fa-twitch"></i>
+                            </a>
+                        </div>
+                        <div class="footer-copy">
+                            <span data-i18n="copy.msg">© Copyright Cibertec Developers Team 2018</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/0.0.14/i18next-jquery.min.js"></script>
+        <script src="https://unpkg.com/i18next/i18next.min.js"></script>
+        <script src="./translation.js"></script>
+    </body>
+</html>

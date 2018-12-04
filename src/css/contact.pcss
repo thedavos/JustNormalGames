@@ -1,0 +1,77 @@
+/* VARIABLES Y RESET */
+@import './index.pcss';
+
+/* REUTILIZABLES */
+@import './utilities.pcss';
+
+/* BARRA DE NAVEGACIÓN */
+@import './components/navbar.pcss';
+
+/* HEADER */
+@import './components/header.pcss';
+
+/* FOOTER */
+@import './components/footer.pcss';
+
+.title {
+    text-align: center;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--semibold-weight);
+}
+
+.hero-wrap {
+    margin: 6em 0;
+}
+
+.map {
+    width: 100%;
+}
+
+.map iframe {
+    width: inherit;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-bg);
+    font-weight: var(--medium-weight);
+    margin-bottom: 2em;
+}
+
+.form-group {
+    margin: 2.5em 0;
+}
+
+.form-group:first-child label {
+    margin-top: 0;
+}
+
+.form-group label {
+    color: var(--primary-bg);
+    margin-bottom: .8em;
+    margin-top: 1em;
+    display: block;
+}
+
+.form-group input, textarea {
+    padding: .4em 1em;
+    height: 60px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--primary-bg);
+    resize: none;
+}
+
+.form-group:last-child {
+    margin-top: 2.5em;
+    text-align: center;
+}
+
+.btn {
+    text-align: center;
+    border-radius: 24px;
+    background: var(--light-bg);
+}

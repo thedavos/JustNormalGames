@@ -3,6 +3,19 @@ i18next.init({
     resources: {
         en: {
             translation: {
+                // HERO
+                title: 'Site map',
+                hero: {
+                    home: 'homepage',
+                    games: {
+                        memory: 'memory card',
+                        rps: 'Rock, Paper, Scissors'
+                    },
+                    contact: 'contact',
+                    team: 'team',
+                    sitemap: 'sitemap'
+
+                },
                 // FOOTER
                 footerLinks: {
                     contact: 'Contact',
@@ -17,12 +30,6 @@ i18next.init({
                     en: 'English',
                     es: 'Spanish'
                 },
-                // TITLES
-                titles: {
-                    news: 'Last News',
-                    games: 'Javascript Games',
-                    play: 'Play Game'
-                },
                 // NAV
                 nav: {
                     games: 'Games',
@@ -30,13 +37,6 @@ i18next.init({
                     news: 'News'
                 },
                 // NEWS
-                news: {
-                    more: 'See more',
-                    first: "Daeja's View: Not all Fun and Games",
-                    second: "Alliance will be at ESL One Hamburg 2018",
-                    third: "Zechs Files: Who Won Transfer Season?",
-                    fourth: "The New 'League Of Legends' Video 'Rise' Is Entirely Amazing"
-                },
                 language: {
                     lang: 'Language'
                 }
@@ -44,6 +44,19 @@ i18next.init({
         },
         es: {
             translation: {
+                // HERO
+                title: 'Mapa de Sitio',
+                hero: {
+                    home: 'Página Principal',
+                    games: {
+                        memory: 'Juego de Memoria',
+                        rps: 'Piedra, Papel y Tijera'
+                    },
+                    contact: 'Contacto',
+                    team: 'Equipo',
+                    sitemap: 'Mapa de Sitio'
+
+                },
                 // FOOTER
                 footerLinks: {
                     contact: 'Contacto',
@@ -58,25 +71,11 @@ i18next.init({
                     en: 'Inglés',
                     es: 'Español'
                 },
-                // TÍTULOS
-                titles: {
-                    news: 'Últimas Noticias',
-                    games: 'Juegos Javascript',
-                    play: 'Juega'
-                },
                 // NAVEGADOR
                 nav: {
                     games: 'Juegos',
                     subscription: 'Suscripción',
                     news: 'Noticias'
-                },
-                // NEWS
-                news: {
-                    more: 'Ver más',
-                    first: "Perspectiva de Daeja: Nada de diversión y juegos",
-                    second: "Alliance estará en el ESL One Hamburg 2018",
-                    third: "Archivos Zechs: ¿Quién ganó la temporada de transferencias?",
-                    fourth: "El nuevo video de 'League of Legends' 'Rise' es completamente asombroso",
                 },
                 language: {
                     lang: 'Idioma'
@@ -93,22 +92,10 @@ i18next.init({
         $('.footer-links').localize()
         $('.footer-copy').localize()
         $('#selectLanguage').localize()
-        $('#main-btn').localize()
         $('.navbar-list').localize()
-        $('.news-card-more').localize()
-        $('.news-card-title').localize()
-        $('h2').localize()
+        $('h1').localize()
+        $('a').localize()
         $('.footer-language label').localize()
         changeSuscriptionText(this.value)
     });
 });
-
-function changeSuscriptionText(value) {
-    if (value === 'es-ES') {
-        $('#email').attr('placeholder', 'Deja tu e-mail aquí si quieres conocer las últimas noticias!')
-        $('#btnSuscription').attr('value', 'SUSCRÍBETE')
-    } else {
-        $('#email').attr('placeholder', 'Leave your e-mail here if you want to know the last games and news!')
-        $('#btnSuscription').attr('value', 'SUSCRIBE')
-    }
-}
