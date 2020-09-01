@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/thedavos/JustNormalGames#readme",
   "devDependencies": {
-    "postcss-cli": "5.0.0",
+    "postcss-cli": "7.1.2",
     "postcss-preset-env": "6.1.1"
   },
   "dependencies": {
